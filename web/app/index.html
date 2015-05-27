@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="appRuby">
+<head>
+	<title>Cosmetica Ruby</title>
+	<link rel="stylesheet" type="text/css" href="../public/css/bootstrap-flatly.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/estilo.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-default">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#">Clientes</a>
+                </li>
+                <li>
+                    <a href="#/productos">Productos</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div ng-view></div>
+
+    <script type="text/javascript" src="../public/lib/angular.js"></script>
+    <script type="text/javascript" src="../public/lib/angular-route.js"></script>
+    <script type="text/javascript" src="../public/lib/ui-bootstrap-tpls-0.13.0.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
+    <script type="text/javascript" src="./controllers/controllerProductos.js"></script>
+    <script type="text/javascript" src="./controllers/controllerTypeahead.js"></script>
+    <script type="text/javascript" src="./services/factoryProductos.js"></script>
+</body>
+</html>

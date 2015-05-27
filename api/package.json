@@ -1,0 +1,22 @@
+{
+  "name": "ruby",
+  "version": "1.0.0",
+  "description": "Sistema Ruby",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^8.4.0",
+    "joi": "^5.1.0",
+    "mysql": "^2.6.2",
+    "sequelize": "^2.0.0-rc7"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-nodemon": "^1.0.5",
+    "sequelize-cli": "^1.0.3"
+  }
+}

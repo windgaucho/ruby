@@ -1,0 +1,41 @@
+<script type="text/ng-template" id="itemTpl.html">
+   <a tabindex="-1">
+      <i ng-class="'icon-'+match.model.type"></i>
+      <span  ng-bind-html-unsafe="match.model.title | typeaheadHighlight:query"></span>
+   </a>
+</script>
+
+<div class="container" ng-controller="ControllerTypeahead">
+    <h2>Productos</h2>
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-xs-4">Buscar Articulo:</label>
+            <div class="col-xs-8">
+                <input class="form-control" type="text" ng-model="filtroArticulo" typeahead-template-url = "views/productoTypeahead.html" typeahead="producto.descripcion for producto in getProductos($viewValue) | filter:$viewValue | limitTo:8" typeahead-on-select="onSelect($item, $model, $label); filtroArticulo = '';"/>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <table class="table table-hover table-bordered">
+            <tr class="well">
+                <td class="tdRight" colspan="4">
+                    <i class="icon-shopping-cart"></i>
+                    <b>{{cantidadTotal()}}</b> productos,
+                    <b>{{importeTotal() | currency}}</b>
+                </td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <th>Codigo</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+            </tr>
+            <tr data-ng-repeat="producto in productos">
+                <td>{{producto.id}}</td>
+                <td>{{producto.codigo | uppercase }}</td>
+                <td>{{producto.descripcion | uppercase }}</td>
+                <td>{{producto.precio | currency}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
